@@ -97,5 +97,21 @@ function ArcanistJobGauge.LoadSettings()
         }
     )
 
+    table.insert(
+        optionsTable,
+        {
+            type = "checkbox",
+            name = "Hide out of combat",
+            tooltip = "Displays only during combat",
+            getFunc = function() return ArcanistJobGauge.savedVars.hideCombat end,
+            setFunc = function(hideCombat)
+                ArcanistJobGauge.savedVars.hideCombat = hideCombat
+                ArcanistJobGauge.updateCombat()
+            end,
+            default = true,
+            width = "full",
+        }
+    )
+
     LAM:RegisterOptionControls(ArcanistJobGauge.menuName, optionsTable)
 end

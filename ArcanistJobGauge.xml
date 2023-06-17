@@ -13,6 +13,10 @@
 
                 <Control name="$(parent)Complex" hidden="true">
                     <Controls>
+                        <Texture name="$(parent)CruxBG" textureFile="ArcanistJobGauge/assets/crux_bg.dds" alpha="0.4">
+                            <Dimensions x="80" y="80"/>
+                            <Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="ArcanistJobGaugeWindowLabelBG" offsetX="-8" offsetY="-16" />
+                        </Texture>
                         <Texture name="$(parent)Crux1" textureFile="ArcanistJobGauge/assets/crux_inactive.dds">
                             <Dimensions x="32" y="32"/>
                             <Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="ArcanistJobGaugeWindowLabelBG" offsetX="16" offsetY="0" />
