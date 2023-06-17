@@ -54,11 +54,11 @@ function ArcanistJobGauge.LoadSettings()
             tooltip =
             "Use the same settings throughout the entire account - instead of per character. Visible only on the Arcanist class",
             getFunc = function()
-                return ArcanistJobGauge.savedVars.accountWide
+                return ArcanistJobGauge.savedVars.enabled
             end,
             setFunc = function(isEnabled)
                 ArcanistJobGauge.savedVars.enabled = isEnabled
-                ArcanistJobGaugeWindow:SetHidden(not isEnabled)
+                ArcanistJobGauge.updateVisibility()
             end,
             width = "full", --or "half",
             requiresReload = false,

@@ -9,11 +9,6 @@ ArcanistJobGauge = {
     fragment         = nil,
 }
 
-ArcanistJobGauge.savedVars = {
-    accountWide = true,
-    enabled = true,
-}
-
 local CRUX_BUFF_ID = 184220
 local TEXTURES = {
     ACTIVE = "ArcanistJobGauge/assets/crux_active.dds",
@@ -68,7 +63,7 @@ function ArcanistJobGauge:Initialize()
 end
 
 function ArcanistJobGauge.AddSceneFragments()
-    if ArcanistJobGauge.fragment ~= nil then return end
+    if ArcanistJobGauge.fragment ~= nil or not ArcanistJobGauge.savedVars.enabled then return end
 
     ArcanistJobGauge.fragment = ZO_HUDFadeSceneFragment:New(ArcanistJobGaugeWindow, nil, 0)
 
